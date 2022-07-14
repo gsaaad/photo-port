@@ -15,12 +15,12 @@ describe("About component", () => {
   test("renderstwice", () => {
     render(<About />);
   });
-  // second test
-  describe("matches snapshot DOM node structure", () => {
-    //asFragment returns a snapshot of DOM
-    const { asFragment } = render(<About />);
-    expect(asFragment()).toMatchSnapshot();
-  });
+});
+// second test
+describe("matches snapshot DOM node structure", () => {
+  //asFragment returns a snapshot of DOM
+  const { asFragment } = render(<About />);
+  expect(asFragment()).toMatchSnapshot();
 });
 
 // simulated DOM with render
