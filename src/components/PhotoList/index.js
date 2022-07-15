@@ -124,12 +124,15 @@ const PhotoList = ({ category }) => {
     <div>
       <div className="flex-row">
         {currentPhotos.map((image, i) => (
-          <img
-            src={require(`../../assets/small/${category}/${i}.jpg`)}
-            alt={image.name}
-            className="img-thumbnail mx-1"
-            key={image.name}
-          />
+          <div>
+            <img
+              src={require(`../../assets/small/${category}/${i}.jpg`)}
+              alt={image.name}
+              className="img-thumbnail mx-1"
+              key={image.name}
+            />
+            <h1 data-testid="h1Title">{image.name}</h1>
+          </div>
         ))}
       </div>
     </div>
