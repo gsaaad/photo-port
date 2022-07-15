@@ -4,7 +4,13 @@ import { capitalizeFirstLetter } from "../../utils/helpers";
 function Nav(props) {
   // create variables to work with from props passed down from App
 
-  const { categories = [], setCurrentCategory, currentCategory } = props;
+  const {
+    categories = [],
+    setCurrentCategory,
+    currentCategory,
+    contactSelected,
+    setContactSelected,
+  } = props;
 
   // useEffect hook to change document title at the top, same as category name
   useEffect(() => {
@@ -22,12 +28,24 @@ function Nav(props) {
         <nav>
           <ul className="flex-row">
             <li className="mx-2">
-              <a data-testid="about" href="#about">
+              <a
+                data-testid="about"
+                href="#about"
+                onClick={() => {
+                  setContactSelected(false);
+                }}
+              >
                 About me
               </a>
             </li>
             <li>
-              <span>Contact</span>
+              <span
+                onClick={() => {
+                  setContactSelected(true);
+                }}
+              >
+                Contact
+              </span>
             </li>
 
             {/* this is mapping and creating an list item for each category picture */}
@@ -50,6 +68,7 @@ function Nav(props) {
                 <span
                   onClick={() => {
                     setCurrentCategory(category);
+                    setContactSelected(false);
                   }}
                 >
                   {" "}
