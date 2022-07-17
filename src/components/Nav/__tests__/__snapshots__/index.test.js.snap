@@ -20,9 +20,7 @@ exports[`Nav component matches snapshot 1`] = `
         <ul
           class="flex-row"
         >
-          <li
-            class="mx-2"
-          >
+          <li>
             <a
               data-testid="about"
               href="#about"

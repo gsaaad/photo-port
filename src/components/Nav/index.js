@@ -27,7 +27,8 @@ function Nav(props) {
         </a>
         <nav>
           <ul className="flex-row">
-            <li className="mx-2">
+            {/* add conditional styling */}
+            <li>
               <a
                 data-testid="about"
                 href="#about"
